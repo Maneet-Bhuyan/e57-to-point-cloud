@@ -1,0 +1,8 @@
+# E57 Meshify — Flask processing backend (full libraries for HF Spaces / Docker)
+# Install: pip install -r requirements.txt
+
+flask>=3.0.0,<4
+numpy>=1.24.0,<3
+scikit-learn>=1.3.0,<2
+open3d>=0.17.0
+pye57>=0.2.0

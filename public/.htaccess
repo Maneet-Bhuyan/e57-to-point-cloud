@@ -1,0 +1,52 @@
+# E57 Meshify — Hostinger / Apache configuration
+# Place in public_html alongside index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Route API calls when using clean URLs (optional)
+    RewriteCond %{QUERY_STRING} (^|&)api=
+    RewriteRule ^ - [L]
+
+    # Default document priority
+    DirectoryIndex index.php default.php index.html
+</IfModule>
+
+# Large E57 uploads — adjust if your plan allows more
+<IfModule mod_php.c>
+    php_value upload_max_filesize 1024M
+    php_value post_max_size 1024M
+    php_value max_execution_time 600
+    php_value max_input_time 600
+    php_value memory_limit 512M
+</IfModule>
+
+# PHP 7.x/8.x via php-fpm (Hostinger often uses this)
+<IfModule mod_fcgid.c>
+    FcgidIOTimeout 600
+    FcgidConnectTimeout 600
+</IfModule>
+
+# Security: block direct access to sensitive PHP (if Apache allows)
+<FilesMatch "^(config\.php)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# Block direct access to view sources (optional hardening)
+<IfModule mod_rewrite.c>
+    RewriteRule ^views/ - [F,L]
+</IfModule>
+
+# Enable compression for static assets
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
+</IfModule>
+
+# Long cache for CDN assets (optional)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

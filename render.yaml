@@ -1,0 +1,19 @@
+# Render Blueprint — E57 Meshify Python API
+# https://render.com/docs/blueprint-spec
+#
+# Deploy: connect this GitHub repo → Render reads this file automatically.
+# Frontend stays on Hostinger; point public/config.php FLASK_BACKEND_URL to this service URL.
+
+services:
+  - type: web
+    name: e57-meshify-api
+    runtime: python
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt && pip install gunicorn
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 2 --timeout 600 --keep-alive 75 app:app
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.11"

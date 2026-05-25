@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Backend runtime data
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/static/meshes/*
+!backend/static/meshes/.gitkeep
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs & env secrets
+*.log
+.env
+.env.local

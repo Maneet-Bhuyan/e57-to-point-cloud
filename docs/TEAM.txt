@@ -1,0 +1,72 @@
+============================================
+TEAM DETAILS
+============================================
+
+Team Name: Shubh-P's
+
+College Name: MVJ COLLEGE OF ENGINEERING
+
+Problem Statement Title: Coversion of Point Cloud Data into 3D Mesh
+
+============================================
+TEAM MEMBERS
+============================================
+
+Member 1:
+- Full Name: Maneet Bhuyan
+- Phone: 9606666571
+- Email: maneetbyan@gmail.com
+
+Member 2:
+- Full Name: Gurbashish Sena Nayak
+- Phone: 7657026287
+- Email: gurbashishsenanayak17@gmail.com
+
+Member 3:
+- Full Name: Shubham Sharma
+- Phone: 9741673742
+- Email: 837shubham461@gmail.com
+
+============================================
+ADDITIONAL INFORMATION
+============================================
+
+Project Brief: 
+
+Objective:
+To develop an automated pipeline for converting raw 3D point cloud data (e.g., from LiDAR or photogrammetry scans) into high-fidelity, watertight 3D mesh models suitable for industrial, architectural, or gaming applications.
+
+Key Features:
+Preprocessing
+
+Noise removal, outlier filtering, and downsampling for optimized point cloud data.
+
+Color/intensity data preservation (if available).
+
+Mesh Reconstruction
+
+Implementation of Ball Pivoting Algorithm (BPA) and/or Poisson Surface Reconstruction for mesh generation.
+
+Adaptive parameter tuning based on point density.
+
+Post-Processing
+
+Mesh smoothing to reduce artifacts.
+
+Hole filling and edge refinement for watertight output.
+
+Visualization & Export
+
+Interactive 3D visualization of point clouds and meshes.
+
+Export to standard formats (.obj, .ply, .stl) with vertex colors/normals.
+
+Technologies Used: 
+
+Python (Open3D, PyE57, NumPy).
+
+Mesh Processing Libraries (Open3D, CGAL, or MeshLab).
+
+Optional GPU Acceleration (CUDA for large datasets).
+
+============================================
